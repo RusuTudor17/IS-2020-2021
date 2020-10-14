@@ -1,0 +1,1 @@
+Pentru varianta good, am in interiorul folderului clasa cu main-ul.
