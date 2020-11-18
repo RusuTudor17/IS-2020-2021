@@ -1,1 +1,2 @@
 # IS-2020-2021
+Momentan proiecutl este intr-un stadiu de draft. Pentru a testa functionalitatea care nu este inca complet terminata la operatiile de client si cont, am scris in prima linie din Launcher cum am facut.
