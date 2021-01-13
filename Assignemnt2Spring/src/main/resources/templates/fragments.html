@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+
+<head th:fragment="head">
+
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-light bg-light" th:fragment="header_admin">
+
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link" href="/admin/displayEmployees">All users</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/createEmployees">Add user</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/deleteEmployee">Delete employee</a></li>
+                <li class="nav-item"><a class="nav-link" href="/admin/updateEmployee">Update employee</a></li>
+
+
+                <li class="nav-item"><a class="nav-link" href="/games/displayGames">Games options</a></li>
+                <li class="nav-item"><a class="nav-link" href="/">Sign out</a></li>
+            </ul>
+</nav>
+
+<nav class="navbar navbar-light bg-light" th:fragment="header_employee">
+
+    <ul  class="nav">
+        <li class="nav-item"><a class="nav-link" href="/games/displayGames">All games</a></li>
+        <li class="nav-item"><a class="nav-link" href="/games/createGame">Add game</a></li>
+        <li class="nav-item"><a class="nav-link" href="/games/deleteGame">Delete game</a></li>
+        <li class="nav-item"><a class="nav-link" href="/games/updateGame">Update game</a></li>
+        <li class="nav-item"><a class="nav-link" href="/gameTypes/displayGameTypes">All types</a></li>
+        <li class="nav-item"><a class="nav-link" href="/gameTypes/createGameType">Add type</a></li>
+        <li class="nav-item"><a class="nav-link" href="/gameTypes/updateGameType">Update type</a></li>
+        <li class="nav-item"><a class="nav-link" href="/">Sign out</a></li>
+    </ul>
+</nav>
+
+</body>
+</html>

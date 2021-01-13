@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+    html{
+    background-color: #FFFF00;
+    }
+    <header th:replace="fragments :: header_employee"></header>
+</head>
+
+<body class="container" th:bgcolor="blue" style="background-color:#FF7F00">
+
+
+<span th:text="${gamePrimit == null} ?  'Jocul deja exista in baza de date a aplicatiei.' : ''"></span>
+<form method="post">
+
+    <div class="form-group">
+        <label>Nume
+            <input th:field="${game.name}" class="form-control">
+        </label>
+        <p class="error" style="color: #FE2D00" th:errors="${game.name}"></p>
+    </div>
+
+
+    <div class="form-group">
+        <label>Descriere
+            <input th:field="${game.description}" class="form-control">
+        </label>
+        <p class="error" style="color: #FE2D00" th:errors="${game.description}"></p>
+    </div>
+
+    <div class="form-group">
+        <label>Category
+            <select th:field="${game.gameType}">
+                <option th:each="gameType : ${gameTypes}"
+                        th:value="${gameType.id}"
+                        th:text="${gameType.name}"
+                ></option>
+            </select>
+
+        </label>
+    </div>
+
+    <div class="form-group">
+        <input  type="submit" value="Add Game" class="btn btn-success">
+    </div>
+
+</form>
+
+
+
+
+
+</body>
+
+</html>

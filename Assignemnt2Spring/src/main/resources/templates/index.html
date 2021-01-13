@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+    html{
+        background-color: #56baed;
+    }
+</head>
+
+<body class="container" th:bgcolor="blue" style="background-color:#FF0000">
+
+
+
+<form style="background-color:#FF0000" method="post" >
+
+    <div style="background-color:#FF0000" class="form-group row">
+        <label>Email
+            <input style="background-color:#FF0000" type="text" th:field= "${user.email}" class="form-control">
+        </label>
+    </div>
+
+    <div style="background-color:#FF0000" class="form-group row">
+        <label >Password
+            <input style="background-color:#FF0000" type="password" th:field= "${user.password}" class="form-control">
+        </label>
+    </div>
+
+    <div  style="background-color:#FF0000" class="form-group row">
+        <input href="logged" type="submit" value="Login" class="btn btn-success">
+    </div>
+
+</form>
+
+
+</body>
+
+</html>

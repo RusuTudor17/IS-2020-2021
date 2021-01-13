@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<header th:replace="fragments :: header_employee"></header>
+<table class="table table-stripped">
+    <tr>
+        <th>ID</th>
+        <td th:text="${gameType.id}"></td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td th:text="${gameType.description}"></td>
+    </tr>
+
+    <tr>
+        <th>Games</th>
+        <td>
+            <span th:each="game : ${games}" th:text="${game.name}+ ',' "></span>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

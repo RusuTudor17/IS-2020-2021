@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+    html{
+    background-color: #56baed;
+    }
+</head>
+
+<body class="container" th:bgcolor="blue" style="background-color:#7F00FF">
+
+<header th:replace="fragments :: header_employee"></header>
+
+
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Game type id</th>
+        <th>Name</th>
+        <th>Descriere</th>
+    </tr>
+    </thead>
+
+    <tr th:each="gametype : ${gameTypes}">
+        <td th:text="${gametype.id}"></td>
+        <td> <a th:href="'/gameTypes/detail?gameTypeId=' + ${gametype.id}" th:text="${gametype.name}"></a></td>
+        <td th:text="${gametype.description}"></td>
+    </tr>
+
+</table>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+    html{
+    background-color: #FFFF00;
+    }
+</head>
+
+<body class="container" th:bgcolor="blue" style="background-color:#FFFF00">
+<header th:replace="fragments :: header_admin"></header>
+<form method="post">
+
+
+    <th:block th:each="user : ${users}">
+        <div class="form-group">
+            <label>
+                <input  type="radio"  name="userIds" th:value="${user.id}">
+                <span style="color:#000000" th:text="'Email:'+${user.email}"></span>
+            </label>
+        </div>
+    </th:block>
+
+
+    <input type="submit" value="Delete" class="btn btn-danger">
+</form>
+
+
+
+</body>
+
+</html>

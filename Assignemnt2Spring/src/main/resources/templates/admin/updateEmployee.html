@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+    html{
+         background-color: #FFFF00;
+    }
+</head>
+
+<body class="container" style="background-color:#FFFF00">
+
+<header th:replace="fragments :: header_admin"></header>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Email</th>
+    </tr>
+    </thead>
+
+    <tr th:each="user : ${users}">
+        <td>
+            <a th:href =" '/admin/changePassword?userId=' + ${user.id}" th:text="${user.email}"></a></td>
+    </tr>
+</table>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+    html{
+    background-color: #FFFF00;
+    }
+</head>
+
+<body class="container" th:bgcolor="blue" style="background-color:#FFFF00">
+<header th:replace="fragments :: header_admin"></header>
+
+<span th:text="${userPrimit == null} ?  'Userul este deja inregistrat' : ''"></span>
+<form method="post">
+
+    <div class="form-group">
+        <label>Email
+            <input th:field="${user.email}" class="form-control">
+        </label>
+        <p class="error" style="color: #FE2D00" th:errors="${user.email}"></p>
+    </div>
+
+
+    <div class="form-group">
+        <label>Password
+            <input th:field="${user.password}" class="form-control">
+        </label>
+        <p class="error" style="color: #FE2D00" th:errors="${user.password}"></p>
+    </div>
+
+
+
+    <div class="form-group">
+        <label>Category
+            <select th:field="${user.rol}">
+                <option th:each="rol : ${roles}"
+                        th:value="${rol.id}"
+                        th:text="${rol.roleName}"
+                ></option>
+            </select>
+            <p class = "error" style="color: #FE2D00" th:errors="${user.rol}"></p>
+        </label>
+    </div>
+
+
+    <div class="form-group">
+        <input  type="submit" value="Create" class="btn btn-success">
+    </div>
+
+</form>
+
+
+
+
+
+</body>
+
+</html>

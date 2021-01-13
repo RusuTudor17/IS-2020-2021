@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+    html{
+    background-color: #56baed;
+    }
+</head>
+
+<body class="container" th:bgcolor="blue" style="background-color:#7F00FF">
+<header th:replace="fragments :: header_employee"></header>
+
+<h1 style="font-size:22px" th:text="'Schimbarea descrierii pentru '+ ${gameType.name}" ></h1>
+
+<form style="background-color:#7F00FF" method="post" >
+
+
+    <div type="hidden" style="background-color:#7F00FF" class="form-group row">
+        <label >
+            <input style="background-color:#7F00FF"  th:field= "${gameType.name}" readonly class="form-control-plaintext" hidden>
+        </label>
+    </div>
+    <div style="background-color:#7F00FF" class="form-group row">
+        <label >Descriere noua
+            <input style="background-color:#7F00FF" onkeypress="this.style.width = ((this.value.length + 1) * 8) + 10 + 'px';" th:field= "${gameType.description}" class="form-control">
+        </label>
+
+    </div>
+
+    <div  style="background-color:#7F00FF" class="form-group row">
+        <input href="logged" type="submit" value="Update description" class="btn btn-success">
+    </div>
+
+</form>
+<p class = "error" style="color: #FE2D00" th:errors="${gameType.description}"></p>
+<p class = "error" style="color: #FE2D00" th:errors="${gameType.name}"></p>
+
+</body>
+
+</html>
