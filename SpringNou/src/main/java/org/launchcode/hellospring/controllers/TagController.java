@@ -19,8 +19,12 @@ import javax.validation.Valid;
 @RequestMapping("tags")
 public class TagController {
 
+
+
     @Autowired
     TagRepository tagRepository;
+
+
 
     @GetMapping
     public String displayTags(Model model){
@@ -29,12 +33,16 @@ public class TagController {
         return "tags/index";
     }
 
+
+
     @GetMapping("create")
     public String displayCreateTagForm(Model model){
         model.addAttribute("title","Create Tag");
         model.addAttribute("event",new Event());
         return "tags/create";
     }
+
+
 
     @PostMapping("create")
     public String processCreateTagForm(@ModelAttribute @Valid Tag tag,
@@ -48,4 +56,6 @@ public class TagController {
         tagRepository.save(tag);
         return "redirect:";
     }
+
+
 }

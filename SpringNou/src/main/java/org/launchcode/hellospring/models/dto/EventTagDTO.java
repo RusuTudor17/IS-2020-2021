@@ -22,6 +22,9 @@ public class EventTagDTO {
     public EventTagDTO(){
     }
 
+
+
+
     public Event getEvent() {
         return event;
     }

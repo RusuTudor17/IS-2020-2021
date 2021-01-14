@@ -17,12 +17,17 @@ public class EventDetails extends AbstractEntity{
     private String contactEmail;
 
 
+
     public EventDetails(@Size(max = 500, message = "Descrierea e prea lunga") String description, @NotBlank(message = "Mailul trebuie dat") @Email(message = "Nu este formatul de mail corect") String contactEmail) {
         this.description = description;
         this.contactEmail = contactEmail;
     }
 
+
+
     public EventDetails(){}
+
+
 
     public String getDescription() {
         return description;

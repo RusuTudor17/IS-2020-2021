@@ -52,6 +52,8 @@ public class EventControllers {
     }
 
 
+
+
     @GetMapping("create")
     public String renderCreateEventForm(Model model){
         model.addAttribute("title","Create Event");
@@ -59,6 +61,8 @@ public class EventControllers {
         model.addAttribute("categories",eventCategoryRepository.findAll());
         return "events/create";
     }
+
+
 
     @PostMapping("create")
     public String createEvent(@ModelAttribute @Valid Event newEvent,
@@ -74,12 +78,18 @@ public class EventControllers {
         return "redirect:";
     }
 
+
+
+
     @GetMapping("delete")
     public String displayDeleteEventForm(Model model){
         model.addAttribute("title","Delete Events");
         model.addAttribute("events", eventRepository.findAll());
         return "events/delete";
     }
+
+
+
 
     @PostMapping("delete")
     public String deleteEvent(@RequestParam(required = false) int[] eventIds){
@@ -90,6 +100,8 @@ public class EventControllers {
         }
         return "redirect:";
     }
+
+
 
     @GetMapping("detail")
     public String displayEventDetails(@RequestParam Integer eventId,Model model){

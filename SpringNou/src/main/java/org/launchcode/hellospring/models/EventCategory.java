@@ -12,6 +12,8 @@ public class EventCategory extends AbstractEntity{
     @Size(min=3, message="Minim 3 caractere")
     private String name;
 
+
+
     @OneToMany(mappedBy = "eventCategory")
     private final List<Event> events = new ArrayList<>();
 
@@ -21,6 +23,8 @@ public class EventCategory extends AbstractEntity{
 
     public EventCategory(){
     }
+
+
 
     public String getName(){return name;}
 

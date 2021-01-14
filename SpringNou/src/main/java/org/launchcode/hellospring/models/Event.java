@@ -18,9 +18,14 @@ public class Event extends AbstractEntity{
     private String name;
 
 
+
+
     @ManyToOne
     @NotNull(message = "Avem nevoie de categorie")
         private EventCategory eventCategory;
+
+
+
 
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -31,10 +36,14 @@ public class Event extends AbstractEntity{
     @ManyToMany
     private final List<Tag> tags = new ArrayList<>();
 
+
+
     public Event(String name, EventCategory eventCategory) {
         this.name = name;
         this.eventCategory=eventCategory;
     }
+
+
 
     public Event(){ }
 
@@ -57,6 +66,8 @@ public class Event extends AbstractEntity{
     public EventDetails getEventDetails() {
         return eventDetails;
     }
+
+
 
     public void setEventDetails(EventDetails eventDetails) {
         this.eventDetails = eventDetails;
