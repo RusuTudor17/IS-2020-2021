@@ -5,6 +5,8 @@
 
 <header th:replace="fragments :: header"></header>
 
+
+
 <form method="post">
     <div class="form-group">
         <input type="hidden" th:field="${eventTag.event}">
@@ -13,8 +15,13 @@
                         th:value="${tag.id}"
                         th:text="${tag.name}"
                 ></option>
+
+
         </select>
+
     </div>
+
+
     <input type="submit" class="btn btn-success" value="Add Tag">
 </form>
 </body>
